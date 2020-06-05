@@ -6,7 +6,7 @@ function cadastrarInvestimento($dataAplic, $valorAplic, $rent, $dataVenci, $tota
 
     try {
         
-        $consulta = "INSERT INTO `gerson` (`dataAplicacao`, `valorAplicado`, `rentabilidade`, `dataVencimento`, `valoFinal`, `diasUteis`, `diaTotal`) 
+        $consulta = "INSERT INTO `cdi` (`dataAplicacao`, `valorAplicado`, `rentabilidade`, `dataVencimento`, `valoFinal`, `diasUteis`, `diaTotal`) 
         VALUES ('{$dataAplic}', '{$valorAplic}', '{$rent}', '{$dataVenci}', '{$total}', '{$diaUtil}', '{$diaTotal}')";
         
         $bancoDeDados->query($consulta);
@@ -24,7 +24,7 @@ function consultarInvestimentos(){
 
     try {
         
-        $consulta = "SELECT * FROM `gerson`";
+        $consulta = "SELECT * FROM `cdi`";
         
         return $bancoDeDados->query($consulta);
         
@@ -40,7 +40,7 @@ function excluirInvestimentos($ID){
 
     try {
         
-        $consulta = "DELETE FROM `gerson` WHERE `gerson`.`ID` = $ID";
+        $consulta = "DELETE FROM `cdi` WHERE `cdi`.`ID` = $ID";
         
         return $bancoDeDados->query($consulta);
         
